@@ -29,7 +29,7 @@ module "ingest_lambda" {
   architectures          = var.lambda_config["ingest"].architectures
   memory_size            = var.lambda_config["ingest"].memory_size
   timeout                = var.lambda_config["ingest"].timeout
-  enable_cloudwatch_logs = true
+  enable_cloudwatch_logs = local.enable_cloudwatch_logs
   enable_xray_tracing    = local.enable_xray_tracing
 
 
@@ -95,7 +95,7 @@ module "read_lambda" {
   architectures          = var.lambda_config["read"].architectures
   memory_size            = var.lambda_config["read"].memory_size
   timeout                = var.lambda_config["read"].timeout
-  enable_cloudwatch_logs = true
+  enable_cloudwatch_logs = local.enable_cloudwatch_logs
   enable_xray_tracing    = local.enable_xray_tracing
   function_url_config = {
     auth_type = var.lambda_config["read"].function_url_config.auth_type
