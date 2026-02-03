@@ -320,7 +320,7 @@ ingest_lambda_url = "https://abc123.lambda-url.eu-west-1.on.aws/"
 read_recent_lambda_url = "https://xyz789.lambda-url.eu-west-1.on.aws/"
 ```
 
-**💾 Save these URLs** - you'll need them for testing!
+**Save these URLs** - you'll need them for testing!
 
 ### Step 6: Verify Deployment
 
@@ -476,19 +476,6 @@ aws s3 rm s3://your-artifact-bucket-name --recursive
 terraform destroy
 ```
 
-### Step 2: Verify Cleanup
-
-
-### Estimated Costs (if not destroyed)
-
-With minimal usage:
-- DynamoDB: ~$0.25/GB/month + $1.25 per million requests
-- Lambda: First 1M requests free, then $0.20 per million
-- VPC: No charge (Gateway Endpoint is free)
-- S3: ~$0.023/GB/month
-
-**Total for low traffic:** < $5/month
-
 ---
 
 ## Design Decisions
@@ -596,4 +583,4 @@ With minimal usage:
 **Sihle Ndlovu**  
 Cloud Engineer(AWS)
 ---
-**Happy Logging! 🚀**
+**Happy Logging!**
