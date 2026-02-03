@@ -25,7 +25,7 @@ This project implements a simple yet production-ready log service that:
 - Retrieves the 100 most recent log entries
 - Runs entirely on AWS serverless infrastructure
 - Is fully Infrastructure as Code (IaC) driven using Terraform
-- Implements security best practices with VPC isolation
+- Implements security best practices with IAM least privileges and VPC isolation
 
 **Key Features:**
 - ✅ Serverless architecture (AWS Lambda + DynamoDB)
@@ -249,6 +249,7 @@ log-service/
 │   ├── s3.tf                    # Artifact storage
 │   └── build.tf                 # Provisioners for Go builds
 ├── docs/
+│   └── LogService.drawio        # Architecture diagram
 │   └── architecture.png         # Architecture diagram
 ├── Makefile                     # Build automation
 ├── go.mod                       # Go dependencies
