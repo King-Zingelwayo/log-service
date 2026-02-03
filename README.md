@@ -147,11 +147,11 @@ Sort Key: DateTime (String)              - ISO 8601 timestamp
 
 **Why DynamoDB?**
 
-✅ **Serverless & Fully Managed**: No server provisioning, patching, or maintenance
-✅ **Predictable Performance**: Single-digit millisecond latency at any scale
-✅ **Cost-Effective**: On-demand billing aligns with variable log ingestion patterns
-✅ **Built-in HA**: Multi-AZ replication with 99.99% availability SLA
-✅ **Flexible Indexing**: GSI enables efficient time-based queries without table scans
+- ✅ **Serverless & Fully Managed**: No server provisioning, patching, or maintenance
+- ✅ **Predictable Performance**: Single-digit millisecond latency at any scale
+- ✅ **Cost-Effective**: On-demand billing aligns with variable log ingestion patterns
+- ✅ **Built-in HA**: Multi-AZ replication with 99.99% availability SLA
+- ✅ **Flexible Indexing**: GSI enables efficient time-based queries without table scans
 
 **Comparison with Alternatives:**
 
@@ -169,12 +169,12 @@ Sort Key: DateTime (String)              - ISO 8601 timestamp
 
 **Why Go for Lambda?**
 
-✅ **Fast Cold Starts**: ~100-200ms vs ~1-3s for Python/Node.js
-✅ **Memory Efficient**: Smaller footprint = lower costs (Lambda charges by GB-seconds)
-✅ **High Performance**: Native compilation provides excellent throughput for log ingestion
-✅ **Type Safety**: Compile-time checks reduce runtime errors in production
-✅ **Concurrency**: Built-in goroutines enable efficient parallel processing (future-proofing)
-✅ **AWS SDK**: Well-maintained SDK v2 with excellent DynamoDB integration
+- ✅ **Fast Cold Starts**: ~100-200ms vs ~1-3s for Python/Node.js
+- ✅ **Memory Efficient**: Smaller footprint = lower costs (Lambda charges by GB-seconds)
+- ✅ **High Performance**: Native compilation provides excellent throughput for log ingestion
+- ✅ **Type Safety**: Compile-time checks reduce runtime errors in production
+- ✅ **Concurrency**: Built-in goroutines enable efficient parallel processing (future-proofing)
+- ✅ **AWS SDK**: Well-maintained SDK v2 with excellent DynamoDB integration
 
 **Performance Comparison (Cold Start + Execution):**
 
@@ -189,11 +189,11 @@ Sort Key: DateTime (String)              - ISO 8601 timestamp
 
 **Why Private Networking?**
 
-✅ **Security**: Defense in depth - Lambdas have no internet access, reducing attack surface
-✅ **Cost Savings**: VPC Gateway Endpoint is **free** (vs $32+/month for NAT Gateway)
-✅ **Performance**: Traffic stays on AWS backbone network, ~5-10ms lower latency
-✅ **Compliance**: Data never leaves AWS network, simplifying audits
-✅ **Scalability**: Gateway endpoints auto-scale without quotas
+- ✅ **Security**: Defense in depth - Lambdas have no internet access, reducing attack surface
+- ✅ **Cost Savings**: VPC Gateway Endpoint is **free** (vs $32+/month for NAT Gateway)
+- ✅ **Performance**: Traffic stays on AWS backbone network, ~5-10ms lower latency
+- ✅ **Compliance**: Data never leaves AWS network, simplifying audits
+- ✅ **Scalability**: Gateway endpoints auto-scale without quotas
 
 **Architecture Benefits:**
 - Traffic flow: `Lambda → VPC Gateway Endpoint → DynamoDB` (no internet involved)
