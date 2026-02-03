@@ -186,6 +186,7 @@ Sort Key: DateTime (String)              - ISO 8601 timestamp
 | Java | 2-5s | Poor (requires 512MB+) | ⭐ Not suitable for simple APIs |
 
 
+
 ### 3. Architecture: ARM64 (Graviton2) vs x86_64Why ARM64?
   - ✅ 20% Cost Savings: ARM64 (Graviton2) Lambda functions cost 20% less than x86_64
   - ✅ Better Performance: Up to 19% better price-performance ratio for compute-intensive workloads
@@ -194,20 +195,20 @@ Sort Key: DateTime (String)              - ISO 8601 timestamp
   - ✅ No Code Changes: Go cross-compiles seamlessly to ARM64 architecture
 
 **Performance Benefits:**
-    - Go runtime optimized for ARM64
-    - Faster execution for JSON parsing and DynamoDB SDK calls
-    - Lower latency for high-throughput log ingestion
+  - Go runtime optimized for ARM64
+  - Faster execution for JSON parsing and DynamoDB SDK calls
+  - Lower latency for high-throughput log ingestion
 
 **Why This Matters for Log Service:**
-    - High request volume amplifies cost savings
-    - Every millisecond counts in log ingestion latency
-    - Forward-compatible with AWS Graviton3 (even better performance)
+  - High request volume amplifies cost savings
+  - Every millisecond counts in log ingestion latency
+  - Forward-compatible with AWS Graviton3 (even better performance)
 
 **Trade-offs:**
-    - Requires ARM64-compatible dependencies (not an issue for Go stdlib and AWS SDK)
-    - Slightly different debugging (mitigated by comprehensive logging)
+  - Requires ARM64-compatible dependencies (not an issue for Go stdlib and AWS SDK)
+  - Slightly different debugging (mitigated by comprehensive logging)
 
- Decision: ARM64 is optimal
+
 
 ### 3. Networking: Private Subnets + VPC Gateway Endpoint
 
