@@ -11,7 +11,7 @@ resource "null_resource" "build_ingest_lambda" {
       filesha256("${path.module}/../internal/models/${f}")
     ]))
     go_mod = filesha256("${path.module}/../go.mod")
-    
+
   }
 
   provisioner "local-exec" {

@@ -42,7 +42,7 @@ lambda_config = {
     s3_key        = "ingest.zip"
 
     function_url_config = {
-      enabled    = true
+      enabled   = true
       auth_type = "NONE"
     }
   }
@@ -54,7 +54,7 @@ lambda_config = {
     s3_key              = "read-recent.zip"
 
     function_url_config = {
-      enabled    = true
+      enabled   = true
       auth_type = "NONE"
     }
   }

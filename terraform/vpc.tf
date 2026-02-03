@@ -1,16 +1,16 @@
 module "vpc" {
-  source = "terraform-aws-modules/vpc/aws"
+  source  = "terraform-aws-modules/vpc/aws"
   version = "6.0"
 
-  name = local.vpc_name
-  cidr = local.vpc_cidr
-  azs = local.azs
+  name            = local.vpc_name
+  cidr            = local.vpc_cidr
+  azs             = local.azs
   private_subnets = local.subnets
-  
+
   tags = merge(
     var.tags,
     {
-        Name = local.vpc_tag_name
+      Name = local.vpc_tag_name
     }
   )
 
@@ -32,5 +32,5 @@ resource "aws_vpc_endpoint" "dynamodb" {
     }
   )
 
-  depends_on = [ module.vpc ]
+  depends_on = [module.vpc]
 }

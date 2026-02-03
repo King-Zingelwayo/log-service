@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "artifacts" {
   bucket = local.bucket_name
 
   tags = merge(var.tags, {
-    Name = "Lambda Artifact Store"
+    Name    = "Lambda Artifact Store"
     Purpose = "CI/CD Deployment"
   })
 }

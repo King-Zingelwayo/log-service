@@ -30,6 +30,7 @@ module "ingest_lambda" {
   memory_size            = var.lambda_config["ingest"].memory_size
   timeout                = var.lambda_config["ingest"].timeout
   enable_cloudwatch_logs = true
+  enable_xray_tracing    = local.enable_xray_tracing
 
 
   function_url_config = {
@@ -95,6 +96,7 @@ module "read_lambda" {
   memory_size            = var.lambda_config["read"].memory_size
   timeout                = var.lambda_config["read"].timeout
   enable_cloudwatch_logs = true
+  enable_xray_tracing    = local.enable_xray_tracing
   function_url_config = {
     auth_type = var.lambda_config["read"].function_url_config.auth_type
     enabled   = var.lambda_config["read"].function_url_config.enabled

@@ -9,7 +9,7 @@ resource "aws_security_group" "log_service_sg" {
 
 resource "aws_vpc_security_group_egress_rule" "lambda_to_dynamodb" {
   security_group_id = aws_security_group.log_service_sg.id
-  
+
   description    = "Allow HTTPS to DynamoDB Gateway Endpoint"
   prefix_list_id = data.aws_ec2_managed_prefix_list.dynamodb.id
   ip_protocol    = "tcp"

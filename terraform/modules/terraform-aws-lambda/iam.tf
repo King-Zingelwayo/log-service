@@ -4,9 +4,9 @@ resource "aws_iam_role" "lambda_role" {
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{
-      Effect = "Allow"
+      Effect    = "Allow"
       Principal = { Service = "lambda.amazonaws.com" }
-      Action = "sts:AssumeRole"
+      Action    = "sts:AssumeRole"
     }]
   })
 
@@ -15,7 +15,7 @@ resource "aws_iam_role" "lambda_role" {
 
 
 resource "aws_iam_role_policy_attachment" "basic" {
-  count = var.enable_cloudwatch_logs ? 1 : 0
+  count      = var.enable_cloudwatch_logs ? 1 : 0
   role       = aws_iam_role.lambda_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
@@ -27,8 +27,8 @@ resource "aws_iam_role_policy_attachment" "vpc" {
 }
 
 resource "aws_iam_role_policy_attachment" "extras" {
-  for_each = toset(var.additional_managed_policy_arns)
-  role = aws_iam_role.lambda_role.name
+  for_each   = toset(var.additional_managed_policy_arns)
+  role       = aws_iam_role.lambda_role.name
   policy_arn = each.value
 }
 
@@ -52,13 +52,13 @@ resource "aws_iam_role_policy" "xray" {
 
 resource "aws_iam_policy" "custom_policies" {
   for_each = data.aws_iam_policy_document.this
-  name = "${var.function_name}-${each.key}"
-  policy = each.value.json
+  name     = "${var.function_name}-${each.key}"
+  policy   = each.value.json
 }
 
 resource "aws_iam_role_policy_attachment" "custom_policies" {
-  for_each = aws_iam_policy.custom_policies
-  role =  aws_iam_role.lambda_role.name
+  for_each   = aws_iam_policy.custom_policies
+  role       = aws_iam_role.lambda_role.name
   policy_arn = each.value.arn
 }
 
