@@ -3,7 +3,7 @@ region      = "eu-west-1"
 application = "log-service"
 environment = "dev"
 tags = {
-  "recruiter" : "gamesglobal"
+  "recruiter" : "sihle"
   "owner" : "sihle ndlovu"
   "email" : "ndlovu.code@outlook.com"
   "phone" : "0839578644"
